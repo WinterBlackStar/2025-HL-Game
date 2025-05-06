@@ -76,10 +76,17 @@ if want_instructions == "yes":
 # Ask user for number of rounds / infinite mode
 num_rounds = int_check("How many rounds would you like? Push <enter> for inifinte mode: ")
 
+# Ask user for number of rounds / infinite mode
+num_rounds = int_check(question= "Rounds <enter for infinite>: ",
+                       low=1, exit_code="")
 
 if num_rounds == "infinite":
     mode = "infinite"
     num_rounds = 5
+
+# Get Game parameters
+low_num = int_check("Low Number?")
+high_num = int_check(question= "High Number?", low=low_num+1)
 
 # Game loop starts here
 while rounds_played < num_rounds:
